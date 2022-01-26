@@ -1,0 +1,69 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, p, nav, ul, a, .image-1, .image-2, .image-3, h2, h4 {
+  text-align: center;
+}
+
+p {
+  outline: 2px solid blue;
+}
+
+nav ul {
+  list-style-type: square;
+  color: greenyellow;
+}
+
+nav ul li {
+  color: greenyellow;
+  font-size: 50px;
+}
+
+nav ul li a {
+  margin: 15px;
+  text-decoration: none;
+  display: block;
+  color: greenyellow;
+  font-family: fantasy;
+}
+
+h4 {
+  font-size: 50px;
+  font-family: Georgia;
+  font-weight: 200;
+}
+
+.image-1 img {
+  width: 200px;
+}
+
+.image-2 img {
+  width: 400px;
+}
+
+.image-3 img {
+  width: 600px;
+}
+
+body {
+  background-color: ghostwhite;
+}
+
+h1 {
+  border: 2px solid pink;
+  font-size: 50px;
+  background-color: black;
+  color: red;
+  width: 200px;
+  height: 250px;
+  position: relative;
+  top: 0px;
+  left: 550px;
+}
+
+p {
+  color: purple;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,170 @@
+//import
+
+@import "colors";
+
+
+*{
+    position:relative;
+    //box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://c0.wallpaperflare.com/preview/203/798/484/background-image-flower-flowers-purple.jpg");
+   background-size: cover;
+   background-repeat:no-repeat;
+  // background-attachment: fixed;
+   //background-position: center;
+
+}
+//mixins
+@mixin heading {
+    width:$width;
+    height:$height;
+    position:absolute;
+    top:200px;
+    right:150px;
+    position:fixed;
+
+}
+//including mixin
+.main-heading{
+    @include heading;
+}
+
+.logo{
+   // @extend .main-heading;
+   @include heading;
+    top:50px;
+    right:150px;
+}
+
+.main-heading h1 {
+    color:$color4;
+    
+}
+//nesting among properties
+.logo h1{
+    color:$color3;
+    font: {
+        size:40px;
+        family:$font-family;
+        weight:100;
+    }
+}
+
+.buttons{
+    @include heading;
+    top:500px;
+    right:150px;
+}
+.btn1 {
+    
+    
+    border-radius: 30px;
+    border: 1px solid #5e97d1;
+    cursor: pointer;
+    color: #fff;
+    font-family: $font-family;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px 20px;
+    margin: 5px;
+    text-decoration: none;
+    box-shadow: 1px 4px 12px rgba(94,28,68,.15);
+    text-shadow: 0px 1px 0px #528ecc;
+}
+
+.btn1 a{
+    text-decoration: none;
+}
+//extend
+.btn2{
+    @extend .btn1;
+}
+.btn3{
+    @extend .btn1;
+    
+} 
+//nesting
+
+.social{
+    position:fixed;
+	//left: 30px;
+    right:0;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+	padding: 5px 0px;
+	z-index: 1;
+
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 15px;
+        text-decoration: none; 
+        i{
+            color:rgba(39,39,39,0.80);  
+        }
+    }
+
+}
+.image{
+     position:absolute;
+     top:50px;
+     left:130px;
+ }
+ .image1{
+     display: none;
+ }
+ .btn1:hover{
+     background-color: $color3;
+ }
+@media screen and (max-width:600px){
+    *{
+      margin:0;
+      padding:0;
+      
+    }
+    .logo{
+        @include heading;
+        width:300px;
+        height:200px;
+        top:180px;
+        left:240px;
+        
+    }
+
+    .main-heading{
+        @include heading;
+        top:400px;
+        left:40px;
+        
+    }
+
+   .buttons{
+       @include heading;
+       top:0px;
+       left:50px;
+      
+   }
+
+   .social{
+       display: none;
+   }
+    .image{
+        display:none;
+    }
+    
+
+  }
+
+ 
+
+
+
+
+  

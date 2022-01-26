@@ -1,0 +1,101 @@
+//import
+
+@import "text";
+
+
+
+//variables
+
+$color:red;
+$fontsize:50px;
+$bgcolor:ghostwhite;
+
+//mixins
+@mixin colors($border:2px solid pink) {
+    border: $border;
+    font-size: $fontsize;
+    background-color: black;
+    color: $color;
+    width: 200px;
+    height: 250px;
+    position:relative;
+    top:0px;
+    left:550px;
+    
+}
+
+@mixin outline($width , $style, $color ){
+    outline:$width $style $color;
+
+
+}
+
+
+
+p{
+    @include outline(2px ,solid, blue);
+}
+//nesting
+
+
+
+nav{
+    ul{
+        list-style-type: square;
+        color:greenyellow; 
+        li{
+            color:greenyellow;
+            font-size: $fontsize;  
+            a{
+                margin: 15px;
+                text-decoration: none;
+                display: block;
+                color: greenyellow; 
+                font-family: fantasy; 
+            } 
+        }
+    }
+}
+
+
+//nesting concept among properties
+
+h4{
+    font: {
+        size: 50px;
+        family: Georgia ;
+        weight: 200;
+
+
+    }
+}
+
+//using & when we have same class names at max
+
+.image-{
+   
+    &1 img{
+        width:200px;
+      
+    }
+    &2 img{
+        width:400px;
+        
+    }
+    &3 img{
+        width:600px;
+        
+    }
+}
+body{
+  background-color: $bgcolor;
+}
+
+h1{
+    @include colors;
+}
+
+p{
+    $color: purple !global;
+    color: $color
+}
